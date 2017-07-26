@@ -1,6 +1,8 @@
 # Inspector  
-A tera-proxy module that automatically inspects players after 2 seconds when they apply for your group.  
+A tera-proxy module that automatically inspects players when they apply for your group and logs details about them in your console.  
 Only inspects when you are out of combat so you don't get distracted while fighting.  
+
+![Screenshot](http://i.imgur.com/iEn1mtV.png)
   
 ## Usage  
 While in game, open a whisper chat session with "!Inspector" by typing "/w !inspector" in chat and hitting the space bar.
