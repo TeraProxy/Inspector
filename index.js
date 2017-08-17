@@ -1,17 +1,13 @@
 const jobs = require('./jobs'),
-	races = require('./races')
-	ItemStrings = require('item-strings')
+	races = require('./races'),
+	ItemStrings = require('item-strings'),
+	Command = require('command')
 
 module.exports = function Inspector(dispatch) {
-	let enabled = false,
-		cid = null,
-		player = '',
+	let enabled = true,
 		inCombat = false
 		
 	dispatch.hook('S_LOGIN', 1, event => {
-		({cid} = event)
-		player = event.name
-		enabled = true
 		inCombat = false
 	})
 
@@ -137,50 +133,10 @@ module.exports = function Inspector(dispatch) {
 	// ### Chat Hook ### //
 	// ################# //
 	
-	dispatch.hook('C_WHISPER', 1, (event) => {
-		if(event.target.toUpperCase() === "!Inspector".toUpperCase()) {
-			if (/^<FONT>on?<\/FONT>$/i.test(event.message)) {
-				enabled = true
-				message('Inspector <font color="#56B4E9">enabled</font>.')
-				console.log('Inspector enabled.')
-			}
-			else if (/^<FONT>off?<\/FONT>$/i.test(event.message)) {
-				enabled = false
-				message('Inspector <font color="#E69F00">disabled</font>.')
-				console.log('Inspector enabled.')
-			}
-			else message('Commands: "on" (enable Inspector),'
-								+ ' "off" (disable Inspector)'
-						)
-			return false
-		}
-	})
-	
-	function message(msg) {
-		dispatch.toClient('S_WHISPER', 1, {
-			player: cid,
-			unk1: 0,
-			gm: 0,
-			unk2: 0,
-			author: '!Inspector',
-			recipient: player,
-			message: msg
-		})
-	}
-	
-	dispatch.hook('C_CHAT', 1, event => {
-		if(/^<FONT>!inspect<\/FONT>$/i.test(event.message)) {
-			if(!enabled) {
-				enabled = true
-				message('Inspector <font color="#56B4E9">enabled</font>.')
-				console.log('Inspector enabled.')
-			}
-			else {
-				enabled = false
-				message('Inspector <font color="#E69F00">disabled</font>.')
-				console.log('Inspector disabled.')
-			}
-			return false
-		}
+	const command = Command(dispatch)
+	command.add('inspect', () => {
+		enabled = !enabled
+		command.message('[Inspector] ' + (enabled ? '<font color="#56B4E9">enabled</font>' : '<font color="#E69F00">disabled</font>'))
+		console.log('[Inspector] ' + (enabled ? 'enabled' : 'disabled'))
 	})
 }
