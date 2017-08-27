@@ -4,10 +4,12 @@ const jobs = require('./jobs'),
 	Command = require('command')
 
 module.exports = function Inspector(dispatch) {
-	let enabled = true,
+	let cid = null,
+		enabled = true,
 		inCombat = false
 		
 	dispatch.hook('S_LOGIN', 1, event => {
+		({cid} = event)
 		inCombat = false
 	})
 
