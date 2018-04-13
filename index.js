@@ -1,3 +1,5 @@
+// Version 1.2.1
+
 const jobs = require('./jobs'),
 	races = require('./races'),
 	ItemStrings = require('item-strings'),
@@ -8,8 +10,8 @@ module.exports = function Inspector(dispatch) {
 		enabled = true,
 		inCombat = false
 		
-	dispatch.hook('S_LOGIN', 1, event => {
-		({cid} = event)
+	dispatch.hook('S_LOGIN', 10, event => {
+		cid = event.gameId
 		inCombat = false
 	})
 
