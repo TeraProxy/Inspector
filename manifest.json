@@ -1,0 +1,17 @@
+{
+	"files": {
+		"index.js": "043bbe6b10bb37db7040fcf937ac4735f0e221f24203e1f7f99f975e430b24c5",
+		"LICENSE": "589ed823e9a84c56feb95ac58e7cf384626b9cbf4fda2a907bc36e103de1bad2",
+		"README.md": "b616d81e13bd9b11483eeced73bd2851dce5fdf4cad147ba24ae81f203eddf69",
+		"node_modules/item-strings/index.js": "ca1a53fcde0aedec8aebd85be15b15888e662b73e40a2e4e613f2d79f71c1012",
+		"node_modules/item-strings/strings.json": "333bb3554bc6c6ae539a7a3e0bbc8cf6195e5eb819994592613e8e5310e3de43",
+		"module.json": "a83ab7272cd5fdb24e2ca2a710db27a2d15e45fe60d4b3993ecd581fbf00edac",
+		"data.json": "a57d9931a725cf859c86f353d0cc94c7763fe81ce906e1cc5b8c18a9a0f829ee"
+	},
+	"defs": {
+		"C_REQUEST_USER_PAPERDOLL_INFO": 1,
+		"S_DUNGEON_CLEAR_COUNT_LIST": 1,
+		"S_OTHER_USER_APPLY_PARTY": 1,
+		"S_USER_PAPERDOLL_INFO": 4
+	}
+}

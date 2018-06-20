@@ -1,0 +1,33 @@
+{
+	"races": [
+		"Human",
+		"High Elf",
+		"Aman",
+		"Castanic",
+		"Popori",
+		"Baraka"
+	],
+	"jobs": [
+		"Warrior",
+		"Lancer",
+		"Slayer",
+		"Berserker",
+		"Sorceror",
+		"Archer",
+		"Priest",
+		"Mystic",
+		"Reaper",
+		"Gunner",
+		"Brawler",
+		"Ninja",
+		"Valkyrie"
+	],
+	"dungeons": [
+		{"9920": "AAHM"},
+		{"9950": "HH20"},
+		{"9720": "AANM"},
+		{"9935": "RKHM"},
+		{"9939": "RRHM"},
+		{"9970": "RMHM"}
+	]
+}
