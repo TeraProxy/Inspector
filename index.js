@@ -1,4 +1,4 @@
-// Version 1.3.0
+// Version 1.3.1
 
 'use strict'
 
@@ -9,7 +9,7 @@ const ItemStrings = require('item-strings'),
 	jobs = require('./data.json')["jobs"],
 	dungeons = require('./data.json')["dungeons"]
 
-module.exports = function Inspector(dispatch) {
+module.exports = function inspector(dispatch) {
 	const command = Command(dispatch),
 		game = GameState(dispatch)
 
