@@ -37,6 +37,7 @@ Whatever you send to the proxy chat in game is intercepted client-side. The chat
 
 ## Changelog
 <details>
+
 ### 1.3.1
 * [*] Fixed a weird case-sensitivity issue
 ### 1.3.0
@@ -54,4 +55,5 @@ Whatever you send to the proxy chat in game is intercepted client-side. The chat
 * [+] Added logging of a character's information to the console
 ### 1.0.0
 * [~] Initial Release
+
 </details>
