@@ -2,9 +2,9 @@
 
 'use strict'
 
-const ItemStrings = require('item-strings'),
-	Command = require('command'),
+const Command = require('command'),
 	GameState = require('tera-game-state'),
+	ItemStrings = require('./strings.json')["item"],
 	races = require('./data.json')["races"],
 	jobs = require('./data.json')["jobs"],
 	dungeons = require('./data.json')["dungeons"]
@@ -143,7 +143,7 @@ module.exports = function inspector(dispatch) {
 	}
 
 	function conv(s) {
-		return ItemStrings(s) || "Undefined";
+		return ItemStrings[s] || "Undefined"
 	}
 
 	// ################ //
