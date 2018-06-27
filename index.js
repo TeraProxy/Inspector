@@ -4,7 +4,7 @@
 
 const Command = require('command'),
 	GameState = require('tera-game-state'),
-	ItemStrings = require('./strings.json')["item"],
+	ItemStrings = require('./strings.json'),
 	Data = require('./data.json')
 
 module.exports = function inspector(dispatch) {
@@ -12,7 +12,8 @@ module.exports = function inspector(dispatch) {
 		game = GameState(dispatch),
 		races = Data["races"],
 		jobs = Data["jobs"],
-		dungeons = Data["dungeons"]
+		dungeons = Data["dungeons"],
+		strings = ItemStrings["item"]
 
 	let enabled = true,
 		name = ''
@@ -144,7 +145,7 @@ module.exports = function inspector(dispatch) {
 	}
 
 	function conv(s) {
-		return ItemStrings[s] || "Undefined"
+		return strings[s] || "Undefined"
 	}
 
 	// ################ //
