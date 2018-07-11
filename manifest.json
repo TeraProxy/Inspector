@@ -1,15 +1,21 @@
 {
 	"force_clean": true,
 	"files": {
-		"data.json": "cec38e0f4f7ed0a963a84c5a6c9f80a4ac4b41d35c78ed9b666cc13a9da63dec",
+		"data.json": "4f149b6a4eeb49211f4e1c3ade34e8568cb23722422329f322fe8dd543db04f1",
 		"index.js": "b14cb56c073886ae98ab4d81362d6dbba81acbfed2b76fadbce5c6a1ae2bcf5e",
 		"LICENSE": "589ed823e9a84c56feb95ac58e7cf384626b9cbf4fda2a907bc36e103de1bad2",
 		"README.md": "08996e3684f9ad3bdbc48142eb9938216f5d737e558f57135b401aa8ff8626dc",
 		"strings.json": "333bb3554bc6c6ae539a7a3e0bbc8cf6195e5eb819994592613e8e5310e3de43",
 		"config.json": {
 			"overwrite": false,
-			"hash": "f12cf9d55a0c9bc9cc4f6b2bfd2660c1db92b285fe9527c358e0ee45447b54fc"
+			"hash": "dbdf86c6afed1e0ec37361ecfdbf904faecdfd47f02fd30aeec76956d02106e4"
 		},
 		"module.json": "a83ab7272cd5fdb24e2ca2a710db27a2d15e45fe60d4b3993ecd581fbf00edac"
+	},
+	"defs": {
+		"C_REQUEST_USER_PAPERDOLL_INFO": 1,
+		"S_DUNGEON_CLEAR_COUNT_LIST": 1,
+		"S_OTHER_USER_APPLY_PARTY": 1,
+		"S_USER_PAPERDOLL_INFO": 4
 	}
 }
