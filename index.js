@@ -1,13 +1,14 @@
-// Version 1.3.1
+// Version 1.3.2
 
 'use strict'
 
 const Command = require('command'),
 	GameState = require('tera-game-state'),
-	ItemStrings = require('./strings.json'),
-	Data = require('./data.json')
+	ItemStrings = require('./strings'),
+	Data = require('./data'),
+	Config = require('./config')
 
-module.exports = function inspector(dispatch) {
+module.exports = function PlayerInspector(dispatch) {
 	const command = Command(dispatch),
 		game = GameState(dispatch),
 		races = Data["races"],
@@ -16,7 +17,8 @@ module.exports = function inspector(dispatch) {
 		strings = ItemStrings["item"]
 
 	let enabled = true,
-		name = ''
+		name = '',
+		inspectDelay = Config.inspectDelay
 
 	// ############# //
 	// ### Hooks ### //
@@ -40,9 +42,9 @@ module.exports = function inspector(dispatch) {
 			gender = event.gender,
 			race = event.race
 		if(!game.me.inCombat) {
-			//setTimeout( function inspect() {
-					dispatch.toServer('C_REQUEST_USER_PAPERDOLL_INFO', 1, { name: name })
-				//}, 2000)
+			setTimeout( () => {
+				dispatch.toServer('C_REQUEST_USER_PAPERDOLL_INFO', 1, { name: name })
+			}, inspectDelay)
 		}
 		console.log('[Inspector] ' + name + ' has applied to your group')
 	}
@@ -117,13 +119,12 @@ module.exports = function inspector(dispatch) {
 
 		command.message('\t\t' + name + '\'s dungeon clears:')
 		console.log('            ' + name + '\'s dungeon clears:')
+
 		for(let dungeon of event.dungeons) {
-			for(let mappeddungeon of dungeons) {
-				if(dungeon.id in mappeddungeon) {
-					let clearstring = mappeddungeon[dungeon.id] + '\t' + dungeon.clears + ' clears'
-					command.message('\t\t' + clearstring)
-					console.log('            ' + clearstring)
-				}
+			if(dungeon.id in dungeons && Config[dungeons[dungeon.id]]) {
+				let clearstring = dungeons[dungeon.id] + '\t' + dungeon.clears + ' clears'
+				command.message('\t\t' + clearstring)
+				console.log('            ' + clearstring)
 			}
 		}
 		console.log('\n')
@@ -152,9 +153,18 @@ module.exports = function inspector(dispatch) {
 	// ### Commands ### //
 	// ################ //
 
-	command.add('inspect', () => {
-		enabled = !enabled
-		command.message('[Inspector] ' + (enabled ? '<font color="#56B4E9">enabled</font>' : '<font color="#E69F00">disabled</font>'))
-		console.log('[Inspector] ' + (enabled ? 'enabled' : 'disabled'))
+	command.add('inspect', (value) => {
+		if(!value) {
+			enabled = !enabled
+			command.message('[Inspector] ' + (enabled ? '<font color="#56B4E9">enabled</font>' : '<font color="#E69F00">disabled</font>'))
+			console.log('[Inspector] ' + (enabled ? 'enabled' : 'disabled'))
+		}
+		else if(Number.isInteger(value)) {
+			inspectDelay = value
+		}
+		else command.message('Commands:<br>'
+								+ ' "inspect" (enable/disable Inspector),<br>'
+								+ ' "inspect [x]" (change inspect delay to x in ms, e.g. "inspect 2000")'
+			)
 	})
 }

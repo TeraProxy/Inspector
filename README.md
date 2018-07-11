@@ -25,12 +25,15 @@ Only inspects when you are out of combat so you don't get distracted while fight
 
 ## Usage
 The script is enabled by default and will automatically inspect players that apply for your group.  
+To change which dungeon clears are shown on inspect edit the config.json file and set dungeons to either "true" or "false".  
+To change the delay of the automatic inspect edit the config.json file and set the "inspectDelay" to your desired value (in ms).  
   
 While in game, open a proxy chat session by typing "/proxy" or "/8" in chat and hitting the space bar.  
 This serves as the script's command interface.  
 The following commands are supported:  
   
-* inspect - enable/disable Inspector  
+* inspect - enable/disable Inspector
+* inspect [x] - change inspect delay to x in ms, e.g. "inspect 2000" for 2 seconds
   
 ## Safety
 Whatever you send to the proxy chat in game is intercepted client-side. The chat is NOT sent to the server.
@@ -38,8 +41,10 @@ Whatever you send to the proxy chat in game is intercepted client-side. The chat
 ## Changelog
 <details>
 
-### 1.3.1
-* [*] Fixed a weird case-sensitivity issue
+### 1.3.2
+* [+] Added option to edit which dungeons are shown via config.json
+* [+] Added option to edit delay of auto-inspect
+* [*] Performance optimization
 ### 1.3.0
 * [+] Rewrote code to use Caali's "tera-game-state" module in order to reduce overhead
 * [+] Now supports auto-updating via Caali's tera-proxy
