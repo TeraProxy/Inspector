@@ -1,16 +1,16 @@
 {
 	"force_clean": true,
 	"files": {
-		"config.json": {
-			"overwrite": false,
-			"hash": "dbdf86c6afed1e0ec37361ecfdbf904faecdfd47f02fd30aeec76956d02106e4"
-		},
 		"data.json": "ce82de7f4f897040ace99f46097e48a05ff83bf9fdc2aa2043eccc20eb9ccb98",
-		"index.js": "b14cb56c073886ae98ab4d81362d6dbba81acbfed2b76fadbce5c6a1ae2bcf5e",
+		"index.js": "4579547aae33e7a655b8ccf3f00c2d9fea40ea7a7286bb3604538d9c4afd46e9",
 		"LICENSE": "589ed823e9a84c56feb95ac58e7cf384626b9cbf4fda2a907bc36e103de1bad2",
 		"module.json": "a83ab7272cd5fdb24e2ca2a710db27a2d15e45fe60d4b3993ecd581fbf00edac",
 		"README.md": "08996e3684f9ad3bdbc48142eb9938216f5d737e558f57135b401aa8ff8626dc",
-		"strings.json": "83dad3b7dd085cafd2d93638f9559e6b836133fc0999731f1fa5dcfebded78e9"
+		"strings.json": "83dad3b7dd085cafd2d93638f9559e6b836133fc0999731f1fa5dcfebded78e9",
+		"config_1-3-2.json": {
+			"overwrite": false,
+			"hash": "dbdf86c6afed1e0ec37361ecfdbf904faecdfd47f02fd30aeec76956d02106e4"
+		}
 	},
 	"defs": {
 		"C_REQUEST_USER_PAPERDOLL_INFO": 1,

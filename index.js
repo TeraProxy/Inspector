@@ -6,7 +6,7 @@ const Command = require('command'),
 	GameState = require('tera-game-state'),
 	ItemStrings = require('./strings'),
 	Data = require('./data'),
-	Config = require('./config')
+	Config = require('./config_1-3-2')
 
 module.exports = function PlayerInspector(dispatch) {
 	const command = Command(dispatch),
