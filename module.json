@@ -1,4 +1,11 @@
 {
+    "disableAutoUpdate": false,
+    "options": {
+        "niceName": "Inspector",
+        "settingsVersion": 1,
+        "settingsFile": "config.json",
+        "settingsMigrator": "settings_migrator.js"
+    },
     "servers": ["https://raw.githubusercontent.com/TeraProxy/Inspector/master/"],
     "supportUrl": "https://github.com/TeraProxy/Inspector/issues"
 }

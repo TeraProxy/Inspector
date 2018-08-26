@@ -1,34 +1,29 @@
-// Version 1.3.2
+// Version 1.3.3
 
 'use strict'
 
-const Command = require('command'),
-	GameState = require('tera-game-state'),
-	ItemStrings = require('./strings'),
-	Data = require('./data'),
-	Config = require('./config_1-3-2')
+const ItemStrings = require('./strings'),
+	Data = require('./data')
 
-module.exports = function PlayerInspector(dispatch) {
-	const command = Command(dispatch),
-		game = GameState(dispatch),
-		races = Data["races"],
+module.exports = function PlayerInspector(mod) {
+	const races = Data["races"],
 		jobs = Data["jobs"],
 		dungeons = Data["dungeons"],
 		strings = ItemStrings["item"]
 
 	let enabled = true,
 		name = '',
-		inspectDelay = Config.inspectDelay
+		inspectDelay = mod.settings.inspectDelay
 
 	// ############# //
 	// ### Hooks ### //
 	// ############# //
 
-	dispatch.hook('S_OTHER_USER_APPLY_PARTY', 1, applying)
+	mod.hook('S_OTHER_USER_APPLY_PARTY', 1, applying)
 
-	dispatch.hook('S_USER_PAPERDOLL_INFO', 4, inspect)
+	mod.hook('S_USER_PAPERDOLL_INFO', 4, inspect)
 
-	dispatch.hook('S_DUNGEON_CLEAR_COUNT_LIST', 1, clearCount)
+	mod.hook('S_DUNGEON_CLEAR_COUNT_LIST', 1, clearCount)
 
 	// ################# //
 	// ### Functions ### //
@@ -41,9 +36,9 @@ module.exports = function PlayerInspector(dispatch) {
 			job = event.class,
 			gender = event.gender,
 			race = event.race
-		if(!game.me.inCombat) {
+		if(!mod.game.me.inCombat) {
 			setTimeout( () => {
-				dispatch.toServer('C_REQUEST_USER_PAPERDOLL_INFO', 1, { name: name })
+				mod.toServer('C_REQUEST_USER_PAPERDOLL_INFO', 1, { name: name })
 			}, inspectDelay)
 		}
 		console.log('[Inspector] ' + name + ' has applied to your group')
@@ -69,7 +64,7 @@ module.exports = function PlayerInspector(dispatch) {
 			weaponcrystal1, weaponcrystal2, weaponcrystal3, weaponcrystal4,
 			chestcrystal1, chestcrystal2, chestcrystal3, chestcrystal4
 
-		command.message('[Inspector] ' + name + '\'s Item Level: ' + itemLevel + '/' + itemLevelInventory)
+		mod.command.message(name + '\'s Item Level: ' + itemLevel + '/' + itemLevelInventory)
 
 		for(let item of event.items) {
 			switch(item.slot) {
@@ -115,15 +110,15 @@ module.exports = function PlayerInspector(dispatch) {
 	}
 
 	function clearCount(event) {
-		if(game.me.playerId == event.pid) return // for some reason to game retrieves our own dungeon clears as well
+		if(mod.game.me.playerId == event.pid) return // for some reason to game retrieves our own dungeon clears as well
 
-		command.message('\t\t' + name + '\'s dungeon clears:')
+		mod.command.message('\t\t' + name + '\'s dungeon clears:')
 		console.log('            ' + name + '\'s dungeon clears:')
 
 		for(let dungeon of event.dungeons) {
-			if(dungeon.id in dungeons && Config[dungeons[dungeon.id]]) {
+			if(dungeon.id in dungeons && mod.settings[dungeons[dungeon.id]]) {
 				let clearstring = dungeons[dungeon.id] + '\t' + dungeon.clears + ' clears'
-				command.message('\t\t' + clearstring)
+				mod.command.message('\t\t' + clearstring)
 				console.log('            ' + clearstring)
 			}
 		}
@@ -153,16 +148,16 @@ module.exports = function PlayerInspector(dispatch) {
 	// ### Commands ### //
 	// ################ //
 
-	command.add('inspect', (value) => {
+	mod.command.add('inspect', (value) => {
 		if(!value) {
 			enabled = !enabled
-			command.message('[Inspector] ' + (enabled ? '<font color="#56B4E9">enabled</font>' : '<font color="#E69F00">disabled</font>'))
+			mod.command.message((enabled ? '<font color="#56B4E9">enabled</font>' : '<font color="#E69F00">disabled</font>'))
 			console.log('[Inspector] ' + (enabled ? 'enabled' : 'disabled'))
 		}
 		else if(Number.isInteger(value)) {
 			inspectDelay = value
 		}
-		else command.message('Commands:<br>'
+		else mod.command.message('Commands:<br>'
 								+ ' "inspect" (enable/disable Inspector),<br>'
 								+ ' "inspect [x]" (change inspect delay to x in ms, e.g. "inspect 2000")'
 			)
