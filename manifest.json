@@ -1,8 +1,7 @@
 {
-	"force_clean": true,
 	"files": {
 		"LICENSE": "589ed823e9a84c56feb95ac58e7cf384626b9cbf4fda2a907bc36e103de1bad2",
-		"README.md": "218c94facff61087ba962b7d7658fe4451b4cd7fb54b2e1a274c888756fd22bd",
+		"README.md": "eb51fb15fe441af8e357af6c9a2fc474cea8b8338b45592c35b25495a5472809",
 		"config.json": "532caa94a12be3bcfcca4bff5417f59e66da58d4d8e8529efeb917cdf2241f71",
 		"data.json": "f26cd880d11d7ca3639363d942b03229435fa14a1af611f39833163d3fb0804e",
 		"index.js": "7171e17c2e6075cc7e662fcb697c4d9230724b06881acd236352238a58dd154e",
