@@ -7,7 +7,7 @@
 		"index.js": "7171e17c2e6075cc7e662fcb697c4d9230724b06881acd236352238a58dd154e",
 		"module.json": "230f80aeee537c7ebd9a38dbde00a841141a062ce90d03944753b44e7ddf68e4",
 		"settings_migrator.js": "44751a14be520f2299036c7516337ea9fbc2a39802da7badeb2f89824e04a3a8",
-		"strings.json": "83dad3b7dd085cafd2d93638f9559e6b836133fc0999731f1fa5dcfebded78e9"
+		"strings.json": "477962f6cd42cfe2d94887bb6c868f9d0d4cd341c1714f6dc9fd5bca56a99af8"
 	},
 	"defs": {
 		"C_REQUEST_USER_PAPERDOLL_INFO": 1,
