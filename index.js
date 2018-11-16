@@ -1,4 +1,4 @@
-// Version 1.3.3
+// Version 1.3.4
 
 'use strict'
 
@@ -6,6 +6,18 @@ const ItemStrings = require('./strings'),
 	Data = require('./data')
 
 module.exports = function PlayerInspector(mod) {
+
+	if(mod.proxyAuthor !== 'caali') {
+		const options = require('./module').options
+		if(options) {
+			const settingsVersion = options.settingsVersion
+			if(settingsVersion) {
+				mod.settings = require('./' + (options.settingsMigrator || 'module_settings_migrator.js'))(mod.settings._version, settingsVersion, mod.settings)
+				mod.settings._version = settingsVersion
+			}
+		}
+	}
+
 	const races = Data["races"],
 		jobs = Data["jobs"],
 		dungeons = Data["dungeons"],
@@ -21,7 +33,7 @@ module.exports = function PlayerInspector(mod) {
 
 	mod.hook('S_OTHER_USER_APPLY_PARTY', 1, applying)
 
-	mod.hook('S_USER_PAPERDOLL_INFO', 4, inspect)
+	mod.hook('S_USER_PAPERDOLL_INFO', 6, inspect)
 
 	mod.hook('S_DUNGEON_CLEAR_COUNT_LIST', 1, clearCount)
 
@@ -48,14 +60,14 @@ module.exports = function PlayerInspector(mod) {
 		name = event.name
 
 		let	level = event.level,
-			race = Math.floor((event.model - 100) / 200 % 50), // 0 Human, 1 High Elf, 2 Aman, 3 Castanic, 4 Popori/Elin, 5 Baraka
-			gender = Math.floor(event.model / 100 % 2) + 1, // 1 female, 2 male
-			job = event.model % 100 - 1, // 0 Warrior, 1 Lancer, [...], 12 Valkyrie
+			race = Math.floor((event.templateId - 100) / 200 % 50), // 0 Human, 1 High Elf, 2 Aman, 3 Castanic, 4 Popori/Elin, 5 Baraka
+			gender = Math.floor(event.templateId / 100 % 2) + 1, // 1 female, 2 male
+			job = event.templateId % 100 - 1, // 0 Warrior, 1 Lancer, [...], 12 Valkyrie
 			weapon = event.weapon,
-			chest = event.chest,
-			gloves = event.gloves,
-			boots = event.boots,
-			innerwear = event.innerwear,
+			chest = event.body,
+			gloves = event.hand,
+			boots = event.feet,
+			innerwear = event.underwear,
 			circlet = event.head,
 			itemLevel = event.itemLevel,
 			itemLevelInventory = event.itemLevelInventory,
@@ -69,24 +81,24 @@ module.exports = function PlayerInspector(mod) {
 		for(let item of event.items) {
 			switch(item.slot) {
 				case 1: // weapon
-					weaponenchant = item.enchantment
+					weaponenchant = item.enchant
 					weaponcrystal1 = item.crystal1 != 0 ? conv(item.crystal1) : 'none'
 					weaponcrystal2 = item.crystal2 != 0 ? conv(item.crystal2) : 'none'
 					weaponcrystal3 = item.crystal3 != 0 ? conv(item.crystal3) : 'none'
 					weaponcrystal4 = item.crystal4 != 0 ? conv(item.crystal4) : 'none'
 					break;
 				case 3: // chest
-					chestenchant = item.enchantment
+					chestenchant = item.enchant
 					chestcrystal1 = item.crystal1 != 0 ? conv(item.crystal1) : 'none'
 					chestcrystal2 = item.crystal2 != 0 ? conv(item.crystal2) : 'none'
 					chestcrystal3 = item.crystal3 != 0 ? conv(item.crystal3) : 'none'
 					chestcrystal4 = item.crystal4 != 0 ? conv(item.crystal4) : 'none'
 					break;
 				case 4: // gloves
-					glovesenchant = item.enchantment
+					glovesenchant = item.enchant
 					break;
 				case 5: // boots
-					bootsenchant = item.enchantment
+					bootsenchant = item.enchant
 					break;
 			}
 		}

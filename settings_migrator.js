@@ -56,10 +56,17 @@ module.exports = function MigrateSettings(from_ver, to_ver, settings) {
         {
 			// default is basically keeping the inspectDelay setting only
             default:
-				let inspectDelay = settings.inspectDelay;
-				settings = Object.assign(DefaultSettings, settings);
-				settings.inspectDelay = inspectDelay;
-				console.log('[Inspector] Your settings have been updated to version ' + to_ver + '. You can edit the new config file after the next relog.')
+				let oldsettings = settings
+				
+				settings = Object.assign(DefaultSettings, {});
+				
+				for(let option in oldsettings) {
+					if(settings[option]) {
+						settings[option] = oldsettings[option]
+					}
+				}
+				
+				if(from_ver < to_ver) console.log('[Inspector] Your settings have been updated to version ' + to_ver + '. You can edit the new config file after the next relog.')
 				break;
         }
         
