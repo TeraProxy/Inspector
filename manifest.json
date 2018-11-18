@@ -2,11 +2,11 @@
 	"files": {
 		"LICENSE": "589ed823e9a84c56feb95ac58e7cf384626b9cbf4fda2a907bc36e103de1bad2",
 		"README.md": "17b46f4aeefdb8f79cd0270cba659053cec847a1282e74cd6632eff7fe0401fd",
-		"data.json": "1dce6b150cafe7c541cf77756a05cd21dc5bbe9e6e9e752c03523fe75dd67488",
-		"index.js": "4b24c0ed547e68482dfca4a8f387942902c138c4f5235f2b0218e6a94c183aca",
-		"module.json": "3a24ac34785cf69e614747e3f24d70c02bc758d9a16ed6a5bdad40088e6fd873",
-		"settings_migrator.js": "216c0ee37f04e017c107d28ea60b0b354d1b27f2d5eeed360057445a5b5daf63",
-		"strings.json": "7df7bc3e01d33689e7eaa8becb633b2d6817314fdd516c10203afc811be23d02"
+		"data.json": "66b58aca5be0e194c067e386ee80b383db58a2f7793bc79126e540afdf6f4f5d",
+		"index.js": "e52df0a93a94bd05f481bc5fda6d6e2d12f183b214790501ec068abf9fcb5305",
+		"module.json": "6954235a2b96b4d55fcf16724e058deeb99cc99f620270b55fcd098ee7244c0f",
+		"settings_migrator.js": "a7fa73590b46a7f204ee2efcf8fecce0798ce23a1f883f630330acf1b810e9e3",
+		"strings.json": "070f1722d7230f90e203dbcaa8e02922be5059f64e94b4f388a76013a6face70"
 	},
 	"defs": {
 		"C_REQUEST_USER_PAPERDOLL_INFO": 1,

@@ -2,13 +2,14 @@
 
 const DefaultSettings = {
     "inspectDelay": 0,
+	"BS": true,
 	"GLSHM": true,
 	"GLSNM": true,
 	"MM": false,
 	"AAHM": true,
 	"DRCHM": true,
 	"HH20": true,
-	"AANM": true,
+	"AANM": false,
 	"DRCNM": true,
 	"RKHM": false,
 	"RRHM": false,
