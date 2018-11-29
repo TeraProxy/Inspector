@@ -25,7 +25,8 @@ module.exports = function PlayerInspector(mod) {
 
 	let enabled = true,
 		name = '',
-		inspectDelay = mod.settings.inspectDelay
+		inspectDelay = mod.settings.inspectDelay,
+		niceName = mod.proxyAuthor !== 'caali' ? '[Inspect] ' : ''
 
 	// ############# //
 	// ### Hooks ### //
@@ -76,7 +77,7 @@ module.exports = function PlayerInspector(mod) {
 			weaponcrystal1, weaponcrystal2, weaponcrystal3, weaponcrystal4,
 			chestcrystal1, chestcrystal2, chestcrystal3, chestcrystal4
 
-		mod.command.message(name + '\'s Item Level: ' + itemLevel + '/' + itemLevelInventory)
+		mod.command.message(niceName + name + '\'s Item Level: ' + itemLevel + '/' + itemLevelInventory)
 
 		for(let item of event.items) {
 			switch(item.slot) {
@@ -124,13 +125,13 @@ module.exports = function PlayerInspector(mod) {
 	function clearCount(event) {
 		if(mod.game.me.playerId == event.pid) return // for some reason to game retrieves our own dungeon clears as well
 
-		mod.command.message('\t\t' + name + '\'s dungeon clears:')
+		mod.command.message(niceName + '\t\t' + name + '\'s dungeon clears:')
 		console.log('            ' + name + '\'s dungeon clears:')
 
 		for(let dungeon of event.dungeons) {
 			if(dungeon.id in dungeons && mod.settings[dungeons[dungeon.id]]) {
 				let clearstring = dungeons[dungeon.id] + '\t' + dungeon.clears + ' clears'
-				mod.command.message('\t\t' + clearstring)
+				mod.command.message(niceName + '\t\t' + clearstring)
 				console.log('            ' + clearstring)
 			}
 		}
@@ -163,14 +164,14 @@ module.exports = function PlayerInspector(mod) {
 	mod.command.add('inspect', (value) => {
 		if(!value) {
 			enabled = !enabled
-			mod.command.message((enabled ? '<font color="#56B4E9">enabled</font>' : '<font color="#E69F00">disabled</font>'))
-			console.log('[Inspector] ' + (enabled ? 'enabled' : 'disabled'))
+			mod.command.message(niceName + 'Inspector ' + (enabled ? '<font color="#56B4E9">enabled</font>' : '<font color="#E69F00">disabled</font>'))
+			console.log('Inspector ' + (enabled ? 'enabled' : 'disabled'))
 		}
 		else if(Number.isInteger(value)) {
 			inspectDelay = value
 		}
-		else mod.command.message('Commands:<br>'
-								+ ' "inspect" (enable/disable Inspector),<br>'
+		else mod.command.message('Commands:\n'
+								+ ' "inspect" (enable/disable Inspector),\n'
 								+ ' "inspect [x]" (change inspect delay to x in ms, e.g. "inspect 2000")'
 			)
 	})

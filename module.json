@@ -1,7 +1,7 @@
 {
     "disableAutoUpdate": false,
     "options": {
-        "niceName": "Inspector",
+        "niceName": "Inspect",
         "settingsVersion": 3,
         "settingsFile": "config.json",
         "settingsMigrator": "settings_migrator.js"
