@@ -19,8 +19,8 @@ Only inspects when you are out of combat so you don't get distracted while fight
 
 ## Usage
 The script is enabled by default and will automatically inspect players that apply for your group.  
-To change which dungeon clears are shown on inspect edit the "\tera-proxy\settings\Inspector.json" file and set dungeons to either "true" or "false".  
-To change the delay of the automatic inspect edit the "\tera-proxy\settings\Inspector.json" file and set the "inspectDelay" to your desired value (in ms).  
+To change which dungeon clears are shown on inspect edit the config.json file (Pinkie's proxy: "\settings\Inspector.json") and set dungeons to either "true" or "false".  
+To change the delay of the automatic inspect edit the config.json file (Pinkie's proxy: "\settings\Inspector.json") and set the "inspectDelay" to your desired value (in ms).  
   
 While in game, open a proxy chat session by typing "/proxy" or "/8" in chat and hitting the space bar.  
 This serves as the script's command interface.  
