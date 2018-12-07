@@ -1,7 +1,10 @@
 "use strict"
 
 const DefaultSettings = {
-    "inspectDelay": 0,
+	"enabled": true,
+	"showDungeonClears": true,
+	"showWindow": true,
+	"inspectDelay": 0,
 	"BS": true,
 	"GLSHM": true,
 	"GLSNM": true,

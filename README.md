@@ -8,25 +8,31 @@ Should work on all regions as long as the opcodes are mapped. Works on Caali's a
   
 Users of Pinkie's proxy also need to install tera-game-state: https://github.com/caali-hackerman/tera-game-state/archive/master.zip  
   
-If you enjoy my work and wish to support future development, feel free to drop me a small donation: [![Donate](https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_100x26.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=A3KBZUCSEQ5RJ&lc=US&item_name=TeraProxy&curency_code=USD&no_note=1&no_shipping=1&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted)
+If you enjoy my work and wish to support future development, feel free to drop me a small donation: [![Donate](https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_100x26.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=A3KBZUCSEQ5RJ)
 
 # Inspector  
 A tera-proxy module that automatically inspects players when they apply for your group and logs details about them in your console and ingame chat.  
-Only inspects when you are out of combat so you don't get distracted while fighting.  
+It hides the inspect window during combat so you don't get distracted while fighting.  
   
 ![Screenshot](https://i.imgur.com/C3v27Zn.png)
 ![Screenshot](https://i.imgur.com/oxTNFhO.png)
 
 ## Usage
 The script is enabled by default and will automatically inspect players that apply for your group.  
-To change which dungeon clears are shown on inspect edit the config.json file (Pinkie's proxy: "\settings\Inspector.json") and set dungeons to either "true" or "false".  
-To change the delay of the automatic inspect edit the config.json file (Pinkie's proxy: "\settings\Inspector.json") and set the "inspectDelay" to your desired value (in ms).  
+There are several options you can change in the config.json file (Pinkie's proxy: "\settings\Inspector.json"):  
+  
+* To change which dungeon clears are shown on inspect set the dungeon to either "true" or "false"
+* "inspectDelay" - Set the delay between application and inspect (in ms)
+* "showDungeonClears" - Set to "false" to not post dungeon clears in proxy chat
+* "showWindow" - Set to "false" to always hide the inspect window from applicants even when not in combat
   
 While in game, open a proxy chat session by typing "/proxy" or "/8" in chat and hitting the space bar.  
 This serves as the script's command interface.  
 The following commands are supported:  
   
 * inspect - enable/disable Inspector
+* inspect clears - show/hide dungeon clears
+* inspect window - show/hide inspect window for applicants
 * inspect [x] - change inspect delay to x in ms, e.g. "inspect 2000" for 2 seconds
   
 ## Safety
@@ -35,6 +41,11 @@ Whatever you send to the proxy chat in game is intercepted client-side. The chat
 ## Changelog
 <details>
 
+### 1.4.0
+* [+] Added localization for JP, KR, RU, SE, TH, TW regions
+* [+] Added "inspect clears" command and "showDungeonClears" config option
+* [+] Added "inspect window" command and "showWindow" config option
+* [+] Will now even inspect during combat (without opening the inspect window)
 ### 1.3.6
 * [~] Look and feel will now be the same on Caali's and Pinkie's proxy
 ### 1.3.5

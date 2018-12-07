@@ -1,12 +1,43 @@
 {
 	"files": {
 		"LICENSE": "589ed823e9a84c56feb95ac58e7cf384626b9cbf4fda2a907bc36e103de1bad2",
-		"README.md": "f274b68cd4a1881fc773bb4488185836c44e8cfb6fe56bbb1297042eea64d704",
+		"README.md": "ad5768f1e0e861baca3ec4ea5dd6c6869eebfe13333fcada4e4933f28c347b46",
 		"data.json": "66b58aca5be0e194c067e386ee80b383db58a2f7793bc79126e540afdf6f4f5d",
-		"index.js": "f3061d712af3e8645d37ca4b7d7739acce8c1346ab6b293cb33c3aefb0a42c4f",
-		"module.json": "1c4567607e3070b3de61be8cb05c91846b5db5140a9d7a29172032e8856b74e9",
-		"settings_migrator.js": "a7fa73590b46a7f204ee2efcf8fecce0798ce23a1f883f630330acf1b810e9e3",
-		"strings.json": "070f1722d7230f90e203dbcaa8e02922be5059f64e94b4f388a76013a6face70"
+		"index.js": "3e1d80cc470116131c2dafb356b5f5213208417a3fea26d34f5ea4928bf20b67",
+		"module.json": "b58851911c28158790a907a2aca2afbac79f53a4ffa727c772041e8f92dfeed4",
+		"settings_migrator.js": "5534da55ae07ae560564c5dcc9a5f1eb1797cf5ffd59179a11d76ee6837c96ae",
+		"strings/strings.eu.json": {
+			"region": "eu",
+			"hash": "e0572e04d5c045844fc9e1b011e24e1f0332d29bb17c2f7df3f1c93290780496"
+		},
+		"strings/strings.jp.json": {
+			"region": "jp",
+			"hash": "1cb8d2801f99c372449fa390e6f91fe9a565e3b9243f16e11b842849b076b643"
+		},
+		"strings/strings.kr.json": {
+			"region": "kr",
+			"hash": "aad371f92bfa40b19c3caa25ca9756e4e3bb39e601ad86f58e0e1f9161fb9efa"
+		},
+		"strings/strings.na.json": {
+			"region": "na",
+			"hash": "070f1722d7230f90e203dbcaa8e02922be5059f64e94b4f388a76013a6face70"
+		},
+		"strings/strings.ru.json": {
+			"region": "ru",
+			"hash": "2c74ea7254d44b3bc0a453e24137774d61022f4c00b4ee3423e102727e5a29d9"
+		},
+		"strings/strings.se.json": {
+			"region": "se",
+			"hash": "7b4bd269af732c594fd71b4e48cc837e436c50b1321dbdc43b24d71ee1022816"
+		},
+		"strings/strings.th.json": {
+			"region": "th",
+			"hash": "444cca95ff686189968c0f5840abea8a48dd068f642d7a1298fd9e8c95cfb0ab"
+		},
+		"strings/strings.tw.json": {
+			"region": "tw",
+			"hash": "ed789db764b0c007ece97f74258949c052c279a2515d3d8214fbcf5f58cba075"
+		}
 	},
 	"defs": {
 		"C_REQUEST_USER_PAPERDOLL_INFO": 1,

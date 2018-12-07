@@ -1,9 +1,8 @@
-// Version 1.3.5
+// Version 1.4.0
 
 'use strict'
 
-const ItemStrings = require('./strings'),
-	Data = require('./data')
+const Data = require('./data')
 
 module.exports = function PlayerInspector(mod) {
 
@@ -21,11 +20,10 @@ module.exports = function PlayerInspector(mod) {
 	const races = Data["races"],
 		jobs = Data["jobs"],
 		dungeons = Data["dungeons"],
-		strings = ItemStrings["item"]
+		strings = require('./strings/strings.' + mod.region + '.json')["item"]
 
-	let enabled = true,
-		name = '',
-		inspectDelay = mod.settings.inspectDelay,
+	let name = '',
+		appliedInCombat = false,
 		niceName = mod.proxyAuthor !== 'caali' ? '[Inspect] ' : ''
 
 	// ############# //
@@ -43,17 +41,18 @@ module.exports = function PlayerInspector(mod) {
 	// ################# //
 
 	function applying(event) {
-		if(!enabled) return
+		if(!mod.settings.enabled) return
 		let name = event.name,
 			level = event.level,
 			job = event.class,
 			gender = event.gender,
 			race = event.race
-		if(!mod.game.me.inCombat) {
-			setTimeout( () => {
-				mod.toServer('C_REQUEST_USER_PAPERDOLL_INFO', 1, { name: name })
-			}, inspectDelay)
-		}
+
+		setTimeout( () => {
+			if(mod.game.me.inCombat) appliedInCombat = true
+			mod.toServer('C_REQUEST_USER_PAPERDOLL_INFO', 1, { name: name })
+		}, mod.settings.inspectDelay)
+
 		console.log('[Inspector] ' + name + ' has applied to your group')
 	}
 
@@ -120,18 +119,22 @@ module.exports = function PlayerInspector(mod) {
 					'            ' + 'Innerwear: ' + conv(innerwear) + '\n' +
 					'            ' + 'Circlet: ' + conv(circlet) + '\n'
 		)
+		if(appliedInCombat || !mod.settings.showWindow) {
+			appliedInCombat = false
+			return false
+		}
 	}
 
 	function clearCount(event) {
 		if(mod.game.me.playerId == event.pid) return // for some reason to game retrieves our own dungeon clears as well
 
-		mod.command.message(niceName + '\t\t' + name + '\'s dungeon clears:')
+		if(mod.settings.showDungeonClears) mod.command.message(niceName + '\t\t' + name + '\'s dungeon clears:')
 		console.log('            ' + name + '\'s dungeon clears:')
 
 		for(let dungeon of event.dungeons) {
 			if(dungeon.id in dungeons && mod.settings[dungeons[dungeon.id]]) {
 				let clearstring = dungeons[dungeon.id] + '\t' + dungeon.clears + ' clears'
-				mod.command.message(niceName + '\t\t' + clearstring)
+				if(mod.settings.showDungeonClears) mod.command.message(niceName + '\t\t' + clearstring)
 				console.log('            ' + clearstring)
 			}
 		}
@@ -163,15 +166,27 @@ module.exports = function PlayerInspector(mod) {
 
 	mod.command.add('inspect', (value) => {
 		if(!value) {
-			enabled = !enabled
-			mod.command.message(niceName + 'Inspector ' + (enabled ? '<font color="#56B4E9">enabled</font>' : '<font color="#E69F00">disabled</font>'))
-			console.log('Inspector ' + (enabled ? 'enabled' : 'disabled'))
+			mod.settings.enabled = !mod.settings.enabled
+			mod.command.message(niceName + 'Inspector ' + (mod.settings.enabled ? '<font color="#56B4E9">enabled</font>' : '<font color="#E69F00">disabled</font>'))
+			console.log('Inspector ' + (mod.settings.enabled ? 'enabled' : 'disabled'))
+		}
+		else if(value == "clears") {
+			mod.settings.showDungeonClears = !mod.settings.showDungeonClears
+			mod.command.message(niceName + 'Showing dungeon clears ' + (mod.settings.showDungeonClears ? '<font color="#56B4E9">enabled</font>' : '<font color="#E69F00">disabled</font>'))
+			console.log('[Inspect] Showing dungeon clears ' + (mod.settings.showDungeonClears ? 'enabled' : 'disabled'))
+		}
+		else if(value == "window") {
+			mod.settings.showWindow = !mod.settings.showWindow
+			mod.command.message(niceName + 'Showing inspect window ' + (mod.settings.showWindow ? '<font color="#56B4E9">enabled</font>' : '<font color="#E69F00">disabled</font>'))
+			console.log('[Inspect] Showing inspect window ' + (mod.settings.showWindow ? 'enabled' : 'disabled'))
 		}
 		else if(Number.isInteger(value)) {
-			inspectDelay = value
+			mod.settings.inspectDelay = value
 		}
 		else mod.command.message('Commands:\n'
 								+ ' "inspect" (enable/disable Inspector),\n'
+								+ ' "inspect clears" (show/hide dungeon clears),\n'
+								+ ' "inspect window" (show/hide inspect window for applicants),\n'
 								+ ' "inspect [x]" (change inspect delay to x in ms, e.g. "inspect 2000")'
 			)
 	})
