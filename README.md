@@ -3,7 +3,7 @@ Should work on all regions as long as the opcodes are mapped. Works on Caali's a
 
 ##### :heavy_exclamation_mark: Installation :heavy_exclamation_mark:
 1) Download Inspector: https://github.com/TeraProxy/Inspector/archive/master.zip
-2) Extract the contents of the zip file into "\tera-proxy\bin\node_modules\"
+2) Extract the contents of the zip file into "\tera-proxy\mods\"
 3) Done! (the module will auto-update on Caali's proxy when a new version is released)
   
 Users of Pinkie's proxy also need to install tera-game-state: https://github.com/caali-hackerman/tera-game-state/archive/master.zip  
@@ -30,10 +30,10 @@ While in game, open a proxy chat session by typing "/proxy" or "/8" in chat and 
 This serves as the script's command interface.  
 The following commands are supported:  
   
-* inspect - enable/disable Inspector
-* inspect clears - show/hide dungeon clears
-* inspect window - show/hide inspect window for applicants
-* inspect [x] - change inspect delay to x in ms, e.g. "inspect 2000" for 2 seconds
+* **inspect** - enable/disable Inspector
+* **inspect clears** - show/hide dungeon clears
+* **inspect window** - show/hide inspect window for applicants
+* **inspect [x]** - change inspect delay to x in ms, e.g. "inspect 2000" for 2 seconds
   
 ## Safety
 Whatever you send to the proxy chat in game is intercepted client-side. The chat is NOT sent to the server.
