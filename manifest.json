@@ -8,11 +8,11 @@
 		"settings_migrator.js": "5534da55ae07ae560564c5dcc9a5f1eb1797cf5ffd59179a11d76ee6837c96ae",
 		"strings/strings.eu.json": {
 			"region": "eu",
-			"hash": "e0572e04d5c045844fc9e1b011e24e1f0332d29bb17c2f7df3f1c93290780496"
+			"hash": "e11f083274143c3769d9dd27d6c6e025b5003ee7d804888069d587a3ce14b027"
 		},
 		"strings/strings.jp.json": {
 			"region": "jp",
-			"hash": "1cb8d2801f99c372449fa390e6f91fe9a565e3b9243f16e11b842849b076b643"
+			"hash": "dfec03b5b4fb5bd2e9917f531688f199972b2527956c50074da7e4c18153158e"
 		},
 		"strings/strings.kr.json": {
 			"region": "kr",
@@ -20,11 +20,11 @@
 		},
 		"strings/strings.na.json": {
 			"region": "na",
-			"hash": "070f1722d7230f90e203dbcaa8e02922be5059f64e94b4f388a76013a6face70"
+			"hash": "e1447fa0372177a6aadfd634ace56853c804865b8a479bb4533987edf16fbea8"
 		},
 		"strings/strings.ru.json": {
 			"region": "ru",
-			"hash": "2c74ea7254d44b3bc0a453e24137774d61022f4c00b4ee3423e102727e5a29d9"
+			"hash": "87fc239dbfd2f680ec072f597bddd3335debe247ddd1c4c1fefc3e72d553330d"
 		},
 		"strings/strings.se.json": {
 			"region": "se",
