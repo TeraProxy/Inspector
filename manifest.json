@@ -2,6 +2,10 @@
 	"files": {
 		"LICENSE": "589ed823e9a84c56feb95ac58e7cf384626b9cbf4fda2a907bc36e103de1bad2",
 		"README.md": "c42737ee9222f6be87184f32f3bcefc99f97e779d45d23504770502eacf27eaa",
+		"config.json": {
+			"overwrite": false,
+			"hash": "e361c98a0c48bb6f886a287ee66c4491efccf09cbc30d74f5d0ffc667dd5d6a6"
+		},
 		"data.json": "66b58aca5be0e194c067e386ee80b383db58a2f7793bc79126e540afdf6f4f5d",
 		"index.js": "3e1d80cc470116131c2dafb356b5f5213208417a3fea26d34f5ea4928bf20b67",
 		"module.json": "b58851911c28158790a907a2aca2afbac79f53a4ffa727c772041e8f92dfeed4",
