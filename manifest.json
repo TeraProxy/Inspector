@@ -1,52 +1,52 @@
 {
-	"files": {
-		"LICENSE": "589ed823e9a84c56feb95ac58e7cf384626b9cbf4fda2a907bc36e103de1bad2",
-		"README.md": "c42737ee9222f6be87184f32f3bcefc99f97e779d45d23504770502eacf27eaa",
-		"config.json": {
-			"overwrite": false,
-			"hash": "e361c98a0c48bb6f886a287ee66c4491efccf09cbc30d74f5d0ffc667dd5d6a6"
-		},
-		"data.json": "66b58aca5be0e194c067e386ee80b383db58a2f7793bc79126e540afdf6f4f5d",
-		"index.js": "3e1d80cc470116131c2dafb356b5f5213208417a3fea26d34f5ea4928bf20b67",
-		"module.json": "77cc51cf3d680e6c349a8961a8bb9c57a07f3cae824765bd9ece6aff457aafbe",
-		"settings_migrator.js": "5534da55ae07ae560564c5dcc9a5f1eb1797cf5ffd59179a11d76ee6837c96ae",
-		"strings/strings.eu.json": {
-			"region": "eu",
-			"hash": "e11f083274143c3769d9dd27d6c6e025b5003ee7d804888069d587a3ce14b027"
-		},
-		"strings/strings.jp.json": {
-			"region": "jp",
-			"hash": "dfec03b5b4fb5bd2e9917f531688f199972b2527956c50074da7e4c18153158e"
-		},
-		"strings/strings.kr.json": {
-			"region": "kr",
-			"hash": "aad371f92bfa40b19c3caa25ca9756e4e3bb39e601ad86f58e0e1f9161fb9efa"
-		},
-		"strings/strings.na.json": {
-			"region": "na",
-			"hash": "e1447fa0372177a6aadfd634ace56853c804865b8a479bb4533987edf16fbea8"
-		},
-		"strings/strings.ru.json": {
-			"region": "ru",
-			"hash": "87fc239dbfd2f680ec072f597bddd3335debe247ddd1c4c1fefc3e72d553330d"
-		},
-		"strings/strings.se.json": {
-			"region": "se",
-			"hash": "7b4bd269af732c594fd71b4e48cc837e436c50b1321dbdc43b24d71ee1022816"
-		},
-		"strings/strings.th.json": {
-			"region": "th",
-			"hash": "444cca95ff686189968c0f5840abea8a48dd068f642d7a1298fd9e8c95cfb0ab"
-		},
-		"strings/strings.tw.json": {
-			"region": "tw",
-			"hash": "e1447fa0372177a6aadfd634ace56853c804865b8a479bb4533987edf16fbea8"
-		}
-	},
-	"defs": {
-		"C_REQUEST_USER_PAPERDOLL_INFO": 1,
-		"S_DUNGEON_CLEAR_COUNT_LIST": 1,
-		"S_OTHER_USER_APPLY_PARTY": 1,
-		"S_USER_PAPERDOLL_INFO": 6
-	}
+    "files": {
+        "LICENSE": "589ed823e9a84c56feb95ac58e7cf384626b9cbf4fda2a907bc36e103de1bad2",
+        "README.md": "443224dc4617b834d20846418441601bed614b68cb5b0dd21a3b6a0e86ef6fcf",
+        "config.json": {
+            "overwrite": false,
+            "hash": "e361c98a0c48bb6f886a287ee66c4491efccf09cbc30d74f5d0ffc667dd5d6a6"
+        },
+        "data.json": "66b58aca5be0e194c067e386ee80b383db58a2f7793bc79126e540afdf6f4f5d",
+        "index.js": "1e4d9b46ae54ddded35308df4c27e4ac6b418b67946f8470cf08501b3a7bb0f0",
+        "module.json": "6b2853cd52dffdc04404a0b7946c1a22f65e5f6238326dcf19a2a635ecb584bd",
+        "settings_migrator.js": "5534da55ae07ae560564c5dcc9a5f1eb1797cf5ffd59179a11d76ee6837c96ae",
+        "strings/strings.eu.json": {
+            "region": "eu",
+            "hash": "e11f083274143c3769d9dd27d6c6e025b5003ee7d804888069d587a3ce14b027"
+        },
+        "strings/strings.jp.json": {
+            "region": "jp",
+            "hash": "dfec03b5b4fb5bd2e9917f531688f199972b2527956c50074da7e4c18153158e"
+        },
+        "strings/strings.kr.json": {
+            "region": "kr",
+            "hash": "aad371f92bfa40b19c3caa25ca9756e4e3bb39e601ad86f58e0e1f9161fb9efa"
+        },
+        "strings/strings.na.json": {
+            "region": "na",
+            "hash": "e1447fa0372177a6aadfd634ace56853c804865b8a479bb4533987edf16fbea8"
+        },
+        "strings/strings.ru.json": {
+            "region": "ru",
+            "hash": "87fc239dbfd2f680ec072f597bddd3335debe247ddd1c4c1fefc3e72d553330d"
+        },
+        "strings/strings.se.json": {
+            "region": "se",
+            "hash": "7b4bd269af732c594fd71b4e48cc837e436c50b1321dbdc43b24d71ee1022816"
+        },
+        "strings/strings.th.json": {
+            "region": "th",
+            "hash": "444cca95ff686189968c0f5840abea8a48dd068f642d7a1298fd9e8c95cfb0ab"
+        },
+        "strings/strings.tw.json": {
+            "region": "tw",
+            "hash": "e1447fa0372177a6aadfd634ace56853c804865b8a479bb4533987edf16fbea8"
+        }
+    },
+    "defs": {
+        "C_REQUEST_USER_PAPERDOLL_INFO": 1,
+        "S_DUNGEON_CLEAR_COUNT_LIST": 1,
+        "S_OTHER_USER_APPLY_PARTY": 1,
+        "S_USER_PAPERDOLL_INFO": 7
+    }
 }

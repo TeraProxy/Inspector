@@ -1,21 +1,8 @@
-// Version 1.4.0
-
 'use strict'
 
 const Data = require('./data')
 
 module.exports = function PlayerInspector(mod) {
-
-	if(mod.proxyAuthor !== 'caali') {
-		const options = require('./module').options
-		if(options) {
-			const settingsVersion = options.settingsVersion
-			if(settingsVersion) {
-				mod.settings = require('./' + (options.settingsMigrator || 'module_settings_migrator.js'))(mod.settings._version, settingsVersion, mod.settings)
-				mod.settings._version = settingsVersion
-			}
-		}
-	}
 
 	const races = Data["races"],
 		jobs = Data["jobs"],
@@ -30,17 +17,17 @@ module.exports = function PlayerInspector(mod) {
 	// ### Hooks ### //
 	// ############# //
 
-	mod.hook('S_OTHER_USER_APPLY_PARTY', 1, applying)
+	mod.hook('S_OTHER_USER_APPLY_PARTY', 1, S_OTHER_USER_APPLY_PARTY)
 
-	mod.hook('S_USER_PAPERDOLL_INFO', 6, inspect)
+	mod.hook('S_USER_PAPERDOLL_INFO', 7, S_USER_PAPERDOLL_INFO)
 
-	mod.hook('S_DUNGEON_CLEAR_COUNT_LIST', 1, clearCount)
+	mod.hook('S_DUNGEON_CLEAR_COUNT_LIST', 1, S_DUNGEON_CLEAR_COUNT_LIST)
 
 	// ################# //
 	// ### Functions ### //
 	// ################# //
 
-	function applying(event) {
+	function S_OTHER_USER_APPLY_PARTY(event) {
 		if(!mod.settings.enabled) return
 		let name = event.name,
 			level = event.level,
@@ -56,10 +43,11 @@ module.exports = function PlayerInspector(mod) {
 		console.log('[Inspector] ' + name + ' has applied to your group')
 	}
 
-	function inspect(event) {
+	function S_USER_PAPERDOLL_INFO(event) {
 		name = event.name
 
 		let	level = event.level,
+			talentLevel = event.talentLevel,
 			race = Math.floor((event.templateId - 100) / 200 % 50), // 0 Human, 1 High Elf, 2 Aman, 3 Castanic, 4 Popori/Elin, 5 Baraka
 			gender = Math.floor(event.templateId / 100 % 2) + 1, // 1 female, 2 male
 			job = event.templateId % 100 - 1, // 0 Warrior, 1 Lancer, [...], 12 Valkyrie
@@ -103,7 +91,7 @@ module.exports = function PlayerInspector(mod) {
 			}
 		}
 		console.log('[Inspector] ' + name + ' (Level ' + level + ' ' + getJob(job) + ' - ' + getGender(gender) + ' ' + getRace(race, gender) + ')\n' +
-					'            ' + guild + ' - Itemlevel: ' + itemLevel + '(' + itemLevelInventory + ')\n' +
+					'            ' + guild + ' ~ Talent-Level: ' + talentLevel + ' ~ Item-Level: ' + itemLevel + '(' + itemLevelInventory + ')\n' +
 					'            ' + 'Weapon: ' + conv(weapon) + ' +' + weaponenchant + '\n' +
 					'            ' + '        ' + weaponcrystal1 + '\n' +
 					'            ' + '        ' + weaponcrystal2 + '\n' +
@@ -125,10 +113,9 @@ module.exports = function PlayerInspector(mod) {
 		}
 	}
 
-	function clearCount(event) {
+	function S_DUNGEON_CLEAR_COUNT_LIST(event) {
 		if(mod.game.me.playerId == event.pid) return // for some reason to game retrieves our own dungeon clears as well
 
-		if(mod.settings.showDungeonClears) mod.command.message(niceName + '\t\t' + name + '\'s dungeon clears:')
 		console.log('            ' + name + '\'s dungeon clears:')
 
 		for(let dungeon of event.dungeons) {
@@ -184,10 +171,10 @@ module.exports = function PlayerInspector(mod) {
 			mod.settings.inspectDelay = value
 		}
 		else mod.command.message('Commands:\n'
-								+ ' "inspect" (enable/disable Inspector),\n'
-								+ ' "inspect clears" (show/hide dungeon clears),\n'
-								+ ' "inspect window" (show/hide inspect window for applicants),\n'
-								+ ' "inspect [x]" (change inspect delay to x in ms, e.g. "inspect 2000")'
-			)
+			+ ' "inspect" (enable/disable Inspector),\n'
+			+ ' "inspect clears" (show/hide dungeon clears),\n'
+			+ ' "inspect window" (show/hide inspect window for applicants),\n'
+			+ ' "inspect [x]" (change inspect delay to x in ms, e.g. "inspect 2000")'
+		)
 	})
 }
