@@ -4,12 +4,12 @@
         "README.md": "443224dc4617b834d20846418441601bed614b68cb5b0dd21a3b6a0e86ef6fcf",
         "config.json": {
             "overwrite": false,
-            "hash": "e361c98a0c48bb6f886a287ee66c4491efccf09cbc30d74f5d0ffc667dd5d6a6"
+            "hash": "e702c1f0ca92bf70b37d196db93ec4475fec7f767dcd01e2cb210636f3755c80"
         },
-        "data.json": "66b58aca5be0e194c067e386ee80b383db58a2f7793bc79126e540afdf6f4f5d",
+        "data.json": "bf621ece0a00d6a53e789c201c0bc4f99c4b5b641e630a2b9c03dcd729872930",
         "index.js": "1e4d9b46ae54ddded35308df4c27e4ac6b418b67946f8470cf08501b3a7bb0f0",
-        "module.json": "6b2853cd52dffdc04404a0b7946c1a22f65e5f6238326dcf19a2a635ecb584bd",
-        "settings_migrator.js": "5534da55ae07ae560564c5dcc9a5f1eb1797cf5ffd59179a11d76ee6837c96ae",
+        "module.json": "e76be4a1abdc072b5198d078c12151dcc4104cac2dd2068b8fadefe55f77e4e1",
+        "settings_migrator.js": "c9cda6c7fe1405147eaefff6e1dc898fc2aaa376ba9be0be595cc7e76d355cea",
         "strings/strings.eu.json": {
             "region": "eu",
             "hash": "e11f083274143c3769d9dd27d6c6e025b5003ee7d804888069d587a3ce14b027"
@@ -24,7 +24,7 @@
         },
         "strings/strings.na.json": {
             "region": "na",
-            "hash": "e1447fa0372177a6aadfd634ace56853c804865b8a479bb4533987edf16fbea8"
+            "hash": "b44ce45b8ee82911cc2a96239166032c63435346c7e6326c15d1a1f983617285"
         },
         "strings/strings.ru.json": {
             "region": "ru",

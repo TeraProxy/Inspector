@@ -8,7 +8,7 @@
     "options": {
         "niceName": "Inspect",
         "guiName": "Inspector",
-        "settingsVersion": 4,
+        "settingsVersion": 5,
         "settingsFile": "config.json",
         "settingsMigrator": "settings_migrator.js"
     },
