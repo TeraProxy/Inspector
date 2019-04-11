@@ -10,38 +10,14 @@
         "index.js": "1e4d9b46ae54ddded35308df4c27e4ac6b418b67946f8470cf08501b3a7bb0f0",
         "module.json": "e76be4a1abdc072b5198d078c12151dcc4104cac2dd2068b8fadefe55f77e4e1",
         "settings_migrator.js": "c9cda6c7fe1405147eaefff6e1dc898fc2aaa376ba9be0be595cc7e76d355cea",
-        "strings/strings.eu.json": {
-            "region": "eu",
-            "hash": "f4ac20f287eddadaf9cd6fb6c0e819180de3cad32034d477f464a44aff142f2b"
-        },
-        "strings/strings.jp.json": {
-            "region": "jp",
-            "hash": "a068da1aa4ac1322d792e5fb4b44b1392dc17e9c5f3ee43af95cf8d4b7afca9c"
-        },
-        "strings/strings.kr.json": {
-            "region": "kr",
-            "hash": "aacecf9fdc2f741c9a96c141f5032ebc15c0a5a12d874b087699a6d278d34fb5"
-        },
-        "strings/strings.na.json": {
-            "region": "na",
-            "hash": "3f078403911777acd9e46604f9ba06b3918280b05fe8b9861cc80c0ce8c8c741"
-        },
-        "strings/strings.ru.json": {
-            "region": "ru",
-            "hash": "752c20a9f82a18e877ed2b69e3633efcf97b3b6321a1b29f4586eaf469065923"
-        },
-        "strings/strings.se.json": {
-            "region": "se",
-            "hash": "1bfe3266b904b4f5e708ef71e87d7c6fe1f6f6c0169aa2f2451611d79720dfe7"
-        },
-        "strings/strings.th.json": {
-            "region": "th",
-            "hash": "473c7cd1185036ecb1b3aa9c91d99c72be7c648e63508dd52040480e70a54bdc"
-        },
-        "strings/strings.tw.json": {
-            "region": "tw",
-            "hash": "c5b515db4eeed0d19f42bd9c8615d8414e52d4d39b5f8d0ae3e70c4a2ce68fe3"
-        }
+        "strings/strings.eu.json": "f4ac20f287eddadaf9cd6fb6c0e819180de3cad32034d477f464a44aff142f2b",
+        "strings/strings.jp.json": "5b01133f268807b5cdc521322c42bfee0aae785108b9c44b06f5bd56920f10ab",
+        "strings/strings.kr.json": "e263265ac4b1ab163fc6a1fc14904c43f5d8e2dd3540b17a40577ff7d4b5679d",
+        "strings/strings.na.json": "08722b496a309090e6b93f8e37a65565e23d7a72c2d839b51483acb5526869fd",
+        "strings/strings.ru.json": "69fb59982b882aa35e13d7d3f3ba76ea947fe232e9550d0d9a7040b610af8d09",
+        "strings/strings.se.json": "1bfe3266b904b4f5e708ef71e87d7c6fe1f6f6c0169aa2f2451611d79720dfe7",
+        "strings/strings.th.json": "473c7cd1185036ecb1b3aa9c91d99c72be7c648e63508dd52040480e70a54bdc",
+        "strings/strings.tw.json": "5dd07dd45466b7c181541b8fc0c66e83e3647cf50c22ebe60531cb5af29f214f"
     },
     "defs": {
         "C_REQUEST_USER_PAPERDOLL_INFO": 1,
