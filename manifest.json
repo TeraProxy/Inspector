@@ -1,14 +1,14 @@
 {
     "files": {
         "LICENSE": "589ed823e9a84c56feb95ac58e7cf384626b9cbf4fda2a907bc36e103de1bad2",
-        "README.md": "443224dc4617b834d20846418441601bed614b68cb5b0dd21a3b6a0e86ef6fcf",
+        "README.md": "eac0c71167fb234b286703813cb8004fcc2f984eea064173b0dc91a1e150a3e8",
         "config.json": {
             "overwrite": false,
             "hash": "e702c1f0ca92bf70b37d196db93ec4475fec7f767dcd01e2cb210636f3755c80"
         },
         "data.json": "bf621ece0a00d6a53e789c201c0bc4f99c4b5b641e630a2b9c03dcd729872930",
-        "index.js": "1e4d9b46ae54ddded35308df4c27e4ac6b418b67946f8470cf08501b3a7bb0f0",
-        "module.json": "e76be4a1abdc072b5198d078c12151dcc4104cac2dd2068b8fadefe55f77e4e1",
+        "index.js": "f02f6033e8b47fa8defe343c20a18efc5aeae39004090a715a2252762a9a9308",
+        "module.json": "4f426bfa1e12c90427f011069263f15aa4eb67485ed33e004edca345665cd8fc",
         "settings_migrator.js": "c9cda6c7fe1405147eaefff6e1dc898fc2aaa376ba9be0be595cc7e76d355cea",
         "strings/strings.eu.json": "f4ac20f287eddadaf9cd6fb6c0e819180de3cad32034d477f464a44aff142f2b",
         "strings/strings.jp.json": "5b01133f268807b5cdc521322c42bfee0aae785108b9c44b06f5bd56920f10ab",
@@ -23,6 +23,6 @@
         "C_REQUEST_USER_PAPERDOLL_INFO": 1,
         "S_DUNGEON_CLEAR_COUNT_LIST": 1,
         "S_OTHER_USER_APPLY_PARTY": 1,
-        "S_USER_PAPERDOLL_INFO": 7
+        "S_USER_PAPERDOLL_INFO": 8
     }
 }

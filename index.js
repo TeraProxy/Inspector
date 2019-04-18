@@ -19,7 +19,7 @@ module.exports = function PlayerInspector(mod) {
 
 	mod.hook('S_OTHER_USER_APPLY_PARTY', 1, S_OTHER_USER_APPLY_PARTY)
 
-	mod.hook('S_USER_PAPERDOLL_INFO', 7, S_USER_PAPERDOLL_INFO)
+	mod.hook('S_USER_PAPERDOLL_INFO', 8, S_USER_PAPERDOLL_INFO)
 
 	mod.hook('S_DUNGEON_CLEAR_COUNT_LIST', 1, S_DUNGEON_CLEAR_COUNT_LIST)
 

@@ -3,7 +3,7 @@
     "name": "Inspector",
     "author": "TeraProxy",
     "description": "Automatically inspects players when they apply for your group and logs details about them in your console and ingame chat. Hides the inspect window during combat so you don't get distracted while fighting.",
-    "version": "1.4.1",
+    "version": "1.4.2",
     "donationUrl": "https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=A3KBZUCSEQ5RJ",
     "options": {
         "niceName": "Inspect",
