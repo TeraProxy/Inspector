@@ -19,7 +19,7 @@ module.exports = function PlayerInspector(mod) {
 
 	mod.hook('S_OTHER_USER_APPLY_PARTY', 1, S_OTHER_USER_APPLY_PARTY)
 
-	mod.hook('S_USER_PAPERDOLL_INFO', 8, S_USER_PAPERDOLL_INFO)
+	mod.hook('S_USER_PAPERDOLL_INFO', mod.majorPatchVersion >= 85 ? 10:9, S_USER_PAPERDOLL_INFO)
 
 	mod.hook('S_DUNGEON_CLEAR_COUNT_LIST', 1, S_DUNGEON_CLEAR_COUNT_LIST)
 
@@ -37,7 +37,8 @@ module.exports = function PlayerInspector(mod) {
 
 		setTimeout( () => {
 			if(mod.game.me.inCombat) appliedInCombat = true
-			mod.toServer('C_REQUEST_USER_PAPERDOLL_INFO', 1, { name: name })
+			if(mod.majorPatchVersion >= 85) mod.toServer('C_REQUEST_USER_PAPERDOLL_INFO', 2, { unk: 0, name: name })
+			else mod.toServer('C_REQUEST_USER_PAPERDOLL_INFO', 1, { name: name })
 		}, mod.settings.inspectDelay)
 
 		console.log('[Inspector] ' + name + ' has applied to your group')

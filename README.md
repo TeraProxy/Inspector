@@ -41,6 +41,8 @@ Whatever you send to the proxy chat in game is intercepted client-side. The chat
 ## Changelog
 <details>
 
+### 1.4.3
+* [*] Update for patch 85 and below
 ### 1.4.2
 * [*] Updated S_USER_PAPERDOLL_INFO version
 ### 1.4.1

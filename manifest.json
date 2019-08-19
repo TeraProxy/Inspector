@@ -1,28 +1,28 @@
 {
     "files": {
         "LICENSE": "589ed823e9a84c56feb95ac58e7cf384626b9cbf4fda2a907bc36e103de1bad2",
-        "README.md": "eac0c71167fb234b286703813cb8004fcc2f984eea064173b0dc91a1e150a3e8",
+        "README.md": "d5aff86f4518de5b6207c3e0089df0850532403573ebddf95d72583949b2b430",
         "config.json": {
             "overwrite": false,
             "hash": "e702c1f0ca92bf70b37d196db93ec4475fec7f767dcd01e2cb210636f3755c80"
         },
         "data.json": "bf621ece0a00d6a53e789c201c0bc4f99c4b5b641e630a2b9c03dcd729872930",
-        "index.js": "f02f6033e8b47fa8defe343c20a18efc5aeae39004090a715a2252762a9a9308",
-        "module.json": "4f426bfa1e12c90427f011069263f15aa4eb67485ed33e004edca345665cd8fc",
+        "index.js": "f50e27599019ac865e13d18980a9753022ea639eb47072d719ddfa53542f7eb3",
+        "module.json": "b4373fa44fe7c220abeb1b8f3da58b27d7f0a4debbcc279adbc4da63e1e30f17",
         "settings_migrator.js": "c9cda6c7fe1405147eaefff6e1dc898fc2aaa376ba9be0be595cc7e76d355cea",
-        "strings/strings.eu.json": "f4ac20f287eddadaf9cd6fb6c0e819180de3cad32034d477f464a44aff142f2b",
-        "strings/strings.jp.json": "5b01133f268807b5cdc521322c42bfee0aae785108b9c44b06f5bd56920f10ab",
-        "strings/strings.kr.json": "e263265ac4b1ab163fc6a1fc14904c43f5d8e2dd3540b17a40577ff7d4b5679d",
-        "strings/strings.na.json": "08722b496a309090e6b93f8e37a65565e23d7a72c2d839b51483acb5526869fd",
-        "strings/strings.ru.json": "69fb59982b882aa35e13d7d3f3ba76ea947fe232e9550d0d9a7040b610af8d09",
-        "strings/strings.se.json": "1bfe3266b904b4f5e708ef71e87d7c6fe1f6f6c0169aa2f2451611d79720dfe7",
-        "strings/strings.th.json": "473c7cd1185036ecb1b3aa9c91d99c72be7c648e63508dd52040480e70a54bdc",
+        "strings/strings.eu.json": "a4202c958affb7870e88679a9bbac9a50b4b6b41fd56878bfe2ccc0eb0c33b5a",
+        "strings/strings.jp.json": "a545bde7f38a6c35f4f92e84499ed82fbf91b9f9bd9746d0c608a93cf659a880",
+        "strings/strings.kr.json": "0453533d50d4eed684328d59e9f4c40bd4d382744e8549703d70617dd0b64763",
+        "strings/strings.na.json": "0a25d78a489ed1c14246556e8973382b48b3066d0317eb8f73fed9b9239fd1f0",
+        "strings/strings.ru.json": "a68e3adc196963c884b9a09ae50b8c0ade953d617cb5635fa7d49d30f6323215",
+        "strings/strings.se.json": "692b5f93d21d32bec8710450bce89b3874446b718d495ba95c1cc3e22cc35a24",
+        "strings/strings.th.json": "5a83a26ded3c2e78cee8601a7523cbb6e543dc27c949ff69891d7f62b9c442f4",
         "strings/strings.tw.json": "5dd07dd45466b7c181541b8fc0c66e83e3647cf50c22ebe60531cb5af29f214f"
     },
     "defs": {
-        "C_REQUEST_USER_PAPERDOLL_INFO": 1,
+        "C_REQUEST_USER_PAPERDOLL_INFO": [1,2],
         "S_DUNGEON_CLEAR_COUNT_LIST": 1,
         "S_OTHER_USER_APPLY_PARTY": 1,
-        "S_USER_PAPERDOLL_INFO": 8
+        "S_USER_PAPERDOLL_INFO": [9,10]
     }
 }
