@@ -1,23 +1,15 @@
 {
     "files": {
         "LICENSE": "589ed823e9a84c56feb95ac58e7cf384626b9cbf4fda2a907bc36e103de1bad2",
-        "README.md": "d5aff86f4518de5b6207c3e0089df0850532403573ebddf95d72583949b2b430",
+        "README.md": "79b85d4f4bc10a7b351908d29f55e9f6370f5e6b9797810d44d2c3004e438e94",
         "config.json": {
             "overwrite": false,
-            "hash": "e702c1f0ca92bf70b37d196db93ec4475fec7f767dcd01e2cb210636f3755c80"
+            "hash": "f6b0bf0b34cf89ca0438c3222b70e0ed34523f197defbf3679cc2720079c5183"
         },
-        "data.json": "bf621ece0a00d6a53e789c201c0bc4f99c4b5b641e630a2b9c03dcd729872930",
-        "index.js": "f50e27599019ac865e13d18980a9753022ea639eb47072d719ddfa53542f7eb3",
-        "module.json": "b4373fa44fe7c220abeb1b8f3da58b27d7f0a4debbcc279adbc4da63e1e30f17",
-        "settings_migrator.js": "c9cda6c7fe1405147eaefff6e1dc898fc2aaa376ba9be0be595cc7e76d355cea",
-        "strings/strings.eu.json": "a4202c958affb7870e88679a9bbac9a50b4b6b41fd56878bfe2ccc0eb0c33b5a",
-        "strings/strings.jp.json": "a545bde7f38a6c35f4f92e84499ed82fbf91b9f9bd9746d0c608a93cf659a880",
-        "strings/strings.kr.json": "0453533d50d4eed684328d59e9f4c40bd4d382744e8549703d70617dd0b64763",
-        "strings/strings.na.json": "0a25d78a489ed1c14246556e8973382b48b3066d0317eb8f73fed9b9239fd1f0",
-        "strings/strings.ru.json": "a68e3adc196963c884b9a09ae50b8c0ade953d617cb5635fa7d49d30f6323215",
-        "strings/strings.se.json": "692b5f93d21d32bec8710450bce89b3874446b718d495ba95c1cc3e22cc35a24",
-        "strings/strings.th.json": "5a83a26ded3c2e78cee8601a7523cbb6e543dc27c949ff69891d7f62b9c442f4",
-        "strings/strings.tw.json": "5dd07dd45466b7c181541b8fc0c66e83e3647cf50c22ebe60531cb5af29f214f"
+        "data.json": "80f31a12fb1dff0068055d7e3a45a8b9c673d292f1886200a97e60410a58f9d8",
+        "index.js": "d442fd34a4355243f015c8aaa6f2bb4f7c55c2c3c0915fc137e62df38aa9c4d1",
+        "module.json": "b2a692fefe5c2a67d2a6fb1edb943ad1d5609ea3214df83df44cee8fe281c28f",
+        "settings_migrator.js": "cd45ad727edb423dd409ba8d6205d2d4d93c850f78fe998b71131fdae31fbf87"
     },
     "defs": {
         "C_REQUEST_USER_PAPERDOLL_INFO": [1,2],

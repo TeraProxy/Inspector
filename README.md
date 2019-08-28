@@ -1,12 +1,10 @@
 ##### :heavy_exclamation_mark: Status :heavy_exclamation_mark:
-Should work on all regions as long as the opcodes are mapped. Works on Caali's and Pinkie Pie's tera-proxy.
+Should work on all regions as long as the opcodes are mapped. Currently only works on TERA Toolbox.
 
 ##### :heavy_exclamation_mark: Installation :heavy_exclamation_mark:
 1) Download Inspector: https://github.com/TeraProxy/Inspector/archive/master.zip
 2) Extract the contents of the zip file into "\tera-proxy\mods\"
-3) Done! (the module will auto-update on Caali's proxy when a new version is released)
-  
-Users of Pinkie's proxy also need to install tera-game-state: https://github.com/caali-hackerman/tera-game-state/archive/master.zip  
+3) Done! (the module will auto-update when a new version is released)
   
 If you enjoy my work and wish to support future development, feel free to drop me a small donation: [![Donate](https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_100x26.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=A3KBZUCSEQ5RJ)
 
@@ -19,11 +17,11 @@ It hides the inspect window during combat so you don't get distracted while figh
 
 ## Usage
 The script is enabled by default and will automatically inspect players that apply for your group.  
-There are several options you can change in the config.json file (Pinkie's proxy: "\settings\Inspector.json"):  
+There are several options you can change in the config.json file:  
   
-* To change which dungeon clears are shown on inspect set the dungeon to either "true" or "false"
+* To change which dungeon skills are shown on inspect set the dungeon to either "true" or "false"
 * "inspectDelay" - Set the delay between application and inspect (in ms)
-* "showDungeonClears" - Set to "false" to not post dungeon clears in proxy chat
+* "showDungeonSkills" - Set to "false" to not post dungeon skills in proxy chat
 * "showWindow" - Set to "false" to always hide the inspect window from applicants even when not in combat
   
 While in game, open a proxy chat session by typing "/proxy" or "/8" in chat and hitting the space bar.  
@@ -31,7 +29,7 @@ This serves as the script's command interface.
 The following commands are supported:  
   
 * **inspect** - enable/disable Inspector
-* **inspect clears** - show/hide dungeon clears
+* **inspect skills** - show/hide dungeon skills
 * **inspect window** - show/hide inspect window for applicants
 * **inspect [x]** - change inspect delay to x in ms, e.g. "inspect 2000" for 2 seconds
   
@@ -41,6 +39,11 @@ Whatever you send to the proxy chat in game is intercepted client-side. The chat
 ## Changelog
 <details>
 
+### 1.5.0
+* [~] Now showing dungeon skill instead of clear count (the server no longer sends you the clear count)
+* [~] "showDungeonClears" changed to "showDungeonSkills" and "inspect clears" changed to "inspect skills" accordingly
+* [~] Now pulls strings directly from the game files (the module will ALWAYS be up-to-date!)
+* [-] Removed "strings" directory and files as they are not needed any longer
 ### 1.4.3
 * [*] Update for patch 85 and below
 ### 1.4.2
