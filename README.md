@@ -39,6 +39,8 @@ Whatever you send to the proxy chat in game is intercepted client-side. The chat
 ## Changelog
 <details>
 
+### 1.5.1
+* [*] Remove support for patches < 85
 ### 1.5.0
 * [~] Now showing dungeon skill instead of clear count (the server no longer sends you the clear count)
 * [~] "showDungeonClears" changed to "showDungeonSkills" and "inspect clears" changed to "inspect skills" accordingly
