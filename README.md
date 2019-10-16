@@ -39,6 +39,8 @@ Whatever you send to the proxy chat in game is intercepted client-side. The chat
 ## Changelog
 <details>
 
+### 1.5.2
+* [*] Updated definitions for patch 86
 ### 1.5.1
 * [*] Remove support for patches < 85
 ### 1.5.0
